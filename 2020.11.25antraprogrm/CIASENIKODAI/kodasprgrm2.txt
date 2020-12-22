@@ -1,0 +1,53 @@
+#include <stdio.h>
+#include <stdlib.h>
+void sudetis (int mas[],int mas1[], int n)
+{
+    for (int i = 0; i < n; i++)
+    {
+        mas[i] += mas1[n * i];
+    }
+}
+int main()
+{
+    int const limit = 101;
+    int K = 100;
+   // int mas[K][K], mas1[K][K];
+    printf("Iveskite kokio didzio bus generuojami masyvai: \n");
+    scanf ("%d", &K);
+    srand(time(NULL));
+    int *mas  = calloc(K*K,sizeof(int)),*mas1=calloc(K*K,sizeof(int)); //calloc - priskiria atminty vieta , ir tas reiksmes priskiria null
+    ///pirmas masyvas
+    for (int i = 0; i < K; i++)
+    {
+        for (int j = 0; j < K; j++)
+        {
+            mas [i*K+j]= rand()%limit;
+           printf("%4d", mas[i*K+j]);
+
+        }
+
+        printf("\n");
+    }
+    printf("\n");
+
+    ///antras masyvas
+    for (int i = 0; i < K; i++)
+    {
+        for (int j = 0; j < K; j++)
+        {
+            mas1 [i*K+j]= rand()%limit;
+           printf("%4d", mas1[i*K+j]);
+        }
+        printf("\n");
+    }
+    printf("\n");
+    sudetis (mas,mas1,K);
+    ///sudeti pirmo masyvo eilutes elementus su antro masyvo stulpeliu
+    for (int i = 0; i < K; i++)
+    {
+        //mas[i] += mas1[K * i];
+        printf ("%4d", mas[i]);
+    }
+    return 0;
+}
+
