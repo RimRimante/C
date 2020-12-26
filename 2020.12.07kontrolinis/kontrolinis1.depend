@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1607353284 source:d:\uni 1kr 1sem\programavimo ir it pagrindai\pratybos\kontrolinis1\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+
