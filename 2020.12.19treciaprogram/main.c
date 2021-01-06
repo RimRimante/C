@@ -13,6 +13,8 @@ int main()
     int eil;
     eil = Eilutes (failas);
     struct Duomenys *M = malloc(eil*(sizeof(struct Duomenys)));
+    if ((M = malloc(eil*(sizeof(struct Duomenys))) )==NULL)
+        printf("Out of memory.\n");
     nuskaitymas (failas, eil, M);
     printf( "Iveskite gyventoju skaiciu: \n");
     scanf ( "%d", &g);
